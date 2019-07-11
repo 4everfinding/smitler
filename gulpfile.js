@@ -20,6 +20,7 @@ var gulp           = require('gulp'),
 				baseDir: 'app'
 			},
 			notify: false,
+			browser: 'firefox'
 			// tunnel: true,
 			// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
 		});
@@ -52,7 +53,7 @@ gulp.task('sass', function() {
 	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
