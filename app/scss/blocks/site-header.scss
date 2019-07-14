@@ -1,0 +1,56 @@
+.site-header {
+  min-height: 700px;
+  height: 100vh;
+
+  color: #fff;
+  background-color: $dark;
+  background-image: url("../img/top-bg.jpg");
+}
+
+.site-header__top-line {
+    position: absolute;
+
+    width: 100%;
+    padding-top: 40px;
+
+    z-index: 1;
+}
+
+.site-header__phone {
+  position: absolute;
+  right: 90px;
+  top: 45px;
+
+  font-family: Firasans, Arial, sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+
+  white-space: nowrap;
+
+  .fa-mobile-alt {
+    margin-right: 10px;
+    font-size: 22px;
+    line-height: 26px;
+    // vertical-align: middle;
+    color: #555555;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 34px;
+
+
+  .hamburger-box {
+    width: 34px;
+  }
+
+  .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+    width: 34px;
+    height: 2px;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 0;
+  }
+}
