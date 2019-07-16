@@ -53,3 +53,61 @@ section {
   background-color: $accent;
   color: #fff
 }
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  background-color: $accent;
+  padding: 20px 52px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  transition: background-color 0.1s ease;
+
+  &::after {
+      transition: background-color 0.2s ease;
+      position: absolute;
+      content: '';
+      height: 4px;
+      bottom: 0;
+      width: 100%;
+      background-color: darken($accent, 50%);
+      opacity: 0.18;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      left: 0;
+  }
+
+  &:focus, &:hover {
+      text-decoration: none;
+      color: #fff;
+  }
+
+  &:hover {
+    background-color: lighten($accent, 5%);
+
+    &::after {
+        opacity: 0.22
+    }
+  }
+
+  &:active {
+      background-color: darken($accent, 5%);
+
+      &::after {
+          opacity: 0.32;
+      }
+  }
+}
