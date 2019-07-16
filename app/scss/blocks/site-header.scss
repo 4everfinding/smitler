@@ -45,12 +45,93 @@
   .hamburger-box {
     width: 34px;
   }
+}
 
-  .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
     width: 34px;
     height: 2px;
     color: #fff;
     background-color: #fff;
     border-radius: 0;
   }
+
+.hamburger.is-active {
+  .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+    background-color: #fff;
+  }
 }
+
+.mm-navbar {
+  position: relative;
+  height: auto;
+  border: none;
+
+  .mm-title {
+    padding: 0;
+
+    img {
+      width: 128px;
+      height: auto;
+
+      margin: 10px 0 35px;
+    }
+  }
+}
+
+.mm-panels > .mm-panel::after, .mm-panels > .mm-panel::before {
+  height: 0;
+}
+
+.mm-panels > .mm-panel.mm-hasnavbar {
+  padding-top: 10px;
+}
+
+.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview {
+  margin-top: 0;
+}
+
+.mm-listview > li:not(.mm-divider)::after {
+  display: none;
+}
+
+.mm-menu.mm-theme-black .mm-listview > li.mm-selected > a:not(.mm-next), .mm-menu.mm-theme-black .mm-listview > li.mm-selected > span {
+  background-color: transparent;
+  color: $accent;
+}
+
+.mm-listview {
+  > li > a {
+    padding-top: 8px;
+    padding-left: 14%;
+    padding-right: 14%;
+    transition: color 0.25s ease;
+    &:hover {
+      color: $accent;
+
+      &::before {
+        color: $accent;
+        transition: color 0.25s ease;
+      }
+    }
+
+    &::before {
+      content: "\f3a5";
+      font-family: "Font Awesome 5 Free";
+      margin-right: 8px;
+      text-decoration: none;
+      font-size: 12px;
+      color: #fff;
+    }
+  }
+
+  > li.active {
+    &>a {
+      color: $accent;
+    }
+  }
+}
+
+html.mm-opened {
+  // overflow-y: scroll;
+}
+
