@@ -5,7 +5,6 @@
   color: #fff;
   background-color: $dark;
   background-image: url("../img/top-bg.jpg");
-  background-position: 0 0;
 }
 
 .site-header__top-line {
@@ -182,4 +181,18 @@ html.mm-opened {
   font-family: FiraSans, Arial, sans-serif;
 
   text-align: center;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+  .site-header__contacts {
+    font-size: 14px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .site-header__phone-bottom {
+    text-align: left;
+  }
 }

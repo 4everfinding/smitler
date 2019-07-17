@@ -111,3 +111,9 @@ section {
       }
   }
 }
+
+@media only screen and (max-width : 768px) {
+  .button {
+    padding: 12px 36px;
+  }
+}

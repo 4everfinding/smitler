@@ -1,5 +1,6 @@
 var gulp           = require('gulp'),
 		gutil          = require('gulp-util' ),
+    sourcemap      = require("gulp-sourcemaps"),
 		scss           = require('gulp-sass'),
 		browserSync    = require('browser-sync'),
 		concat         = require('gulp-concat'),
@@ -51,10 +52,12 @@ gulp.task('js', ['common-js'], function() {
 
 gulp.task('scss', function() {
 	return gulp.src('app/scss/style.scss')
+  .pipe(sourcemap.init())
 	.pipe(scss({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
 	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
+  .pipe(sourcemap.write("."))
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
