@@ -95,8 +95,8 @@ section {
       color: #fff;
   }
 
-  &:hover {
-    background-color: lighten($accent, 5%);
+  &:focus, &:hover {
+    background-color: lighten($accent, 10%);
 
     &::after {
         opacity: 0.22

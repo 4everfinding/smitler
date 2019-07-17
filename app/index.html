@@ -18,6 +18,32 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#151515">
 	<link rel="stylesheet" href="css/style.min.css">
+  <!-- Pixel Glass -->
+    <style>
+      HTML {
+        background-repeat: no-repeat;
+        background-position:  50% 0;
+        /* Mobile layout by default */
+        background-image: url( "img/320.png" );
+      }
+      /* Tablet */
+      @media ( min-width: 760px ) {
+        HTML {
+          /* Tablet layout */
+          background-image: url( "img/760.png" );
+        }
+      }
+      /* Desktop */
+      @media ( min-width: 960px ) {
+        HTML {
+          /* Desktop layout */
+          background-image: url( "img/1920.png" );
+        }
+      }
+    </style>
+    <link href="pixel-glass/styles.css" rel="stylesheet">
+    <script src="pixel-glass/script.js"></script>
+    <!-- // Pixel Glass -->
 </head>
 <body class="ishome">
   <div id="my-page">
@@ -27,7 +53,7 @@
           <a href="#" class="logo">
             <img src="img/logo-1.svg" width="125" height="45" alt="Салон красоты S & Mitler">
           </a>
-          <div class="site-header__phone">
+          <div class="site-header__phone-top">
             <i class="fas fa-mobile-alt"></i> +7 (495) 118-94-35
           </div>
           <a href="#my-menu" class="hamburger hamburger--squeeze" type="button">
@@ -72,7 +98,30 @@
             </div>
           </div>
         </div>
-
+        <div class="site-header__social">
+          <nav class="social">
+            <ul class="social__list">
+              <li class="social__item"><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social__item"><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li class="social__item"><a href="https://vk.com/" target="_blank"><i class="fab fa-vk"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__contacts">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <i class="fas fa-location-arrow"></i> г. Москва, ул. Ивана Бабушкина, 22с1
+              </div>
+              <div class="col-md-4">
+                <div class="site-header__phone-bottom"><i class="fas fa-mobile-alt"></i> +7 (495) 118-94-35</div>
+              </div>
+              <div class="col-md-4">
+                <i class="fas fa-clock"></i> Время работы: ежедневно, 10:00 - 22:00
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
     <div id="my-content">

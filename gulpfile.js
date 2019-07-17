@@ -19,8 +19,8 @@ var gulp           = require('gulp'),
 			server: {
 				baseDir: 'app'
 			},
-			notify: false
-			// browser: 'firefox'
+			notify: false,
+			browser: 'firefox'
 			// tunnel: true,
 			// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
 		});
