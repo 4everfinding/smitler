@@ -6,5 +6,13 @@
 @import "blocks/logo.scss";
 @import "blocks/hero.scss";
 @import "blocks/social.scss";
+@import "blocks/services.scss";
+
+$colors: $blue, $red, $accent;
+@for $i from 1 through length($colors) {
+  .services__carousel .owl-item:nth-child(#{length($colors)}n+#{$i}) {
+    background-color: nth($colors, $i);
+  }
+}
 
 @import "media"; // Всегда в конце

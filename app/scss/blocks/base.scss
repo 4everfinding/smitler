@@ -112,6 +112,32 @@ section {
   }
 }
 
+.button--service {
+  color: #444;
+  background-color: #fff;
+
+  &::after {
+    background-color: rgba(0, 0, 0 , 0.6);
+  }
+
+  &:hover {
+    color: #444;
+    background-color: darken(#fff, 10%);
+
+    &::after {
+      background-color: rgba(0, 0, 0 , 0.2);
+    }
+  }
+
+  &:active {
+    background-color: darken(#fff, 30%);
+
+    &::after {
+      background-color: rgba(0, 0, 0 , 0.4);
+    }
+  }
+}
+
 @media only screen and (max-width : 768px) {
   .button {
     padding: 12px 36px;
