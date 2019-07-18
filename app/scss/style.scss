@@ -7,6 +7,8 @@
 @import "blocks/hero.scss";
 @import "blocks/social.scss";
 @import "blocks/services.scss";
+@import "blocks/king-salon.scss";
+@import "blocks/fotorama.scss";
 
 $colors: $blue, $red, $accent;
 @for $i from 1 through length($colors) {

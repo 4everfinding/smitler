@@ -27,7 +27,7 @@ $(function() {
     nav: true,
     dots: false,
     smartSpeed: 700,
-    navText: ['<i class="fas fa-angle-double-left"></i>', '<i class="fas fa-angle-double-right"></i>'],
+    navText: ['<i class="fa fa-angle-double-left"></i>', '<i class="fa fa-angle-double-right"></i>'],
     responsiveClass: true,
     responsive: {
       0: {
@@ -57,6 +57,11 @@ $(function() {
   $('.services__content-wrapper .services__title').each(function() {
     var ths = $(this);
     ths.html(ths.html().replace(/(\S+\s*$)/, '<span>$1</span>'));
+  });
+
+    $('section .h2').each(function() {
+    var ths = $(this);
+    ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
   });
 
   // Resize window
