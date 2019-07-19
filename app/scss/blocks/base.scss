@@ -6,16 +6,6 @@
   }
 }
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-  color: #666;
-}
-
-body input:required:valid,
-body textarea:required:valid {
-  color: #666;
-}
-
 html, body {
   height: 100%;
 }
@@ -38,11 +28,6 @@ section, header {
 section {
   background-color: #fff;
 
-  &.inverse {
-    color: #fff;
-    background-color: $dark;
-  }
-
   .h2 {
     font-size: 30px;
     font-weight: 800;
@@ -53,6 +38,11 @@ section {
       color: #fff;
     }
   }
+}
+
+.inverse {
+  color: #fff;
+  background-color: $dark;
 }
 
 .section-overlay {
