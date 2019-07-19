@@ -55,7 +55,14 @@ section {
 
     width: 100%;
     height: 100%;
-    background-color: rgba($overlay, 0.92);
+    background-color: $overlay-dark;
+    opacity: 0.92;
+  }
+}
+
+.section-overlay--light {
+  &::before {
+    background-color: $overlay-light;
   }
 }
 

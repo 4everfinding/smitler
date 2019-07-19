@@ -11,6 +11,7 @@
 @import "blocks/fotorama.scss";
 @import "blocks/ticket.scss";
 @import "blocks/reviews.scss";
+@import "blocks/partners.scss";
 
 $colors: $blue, $red, $accent;
 @for $i from 1 through length($colors) {
