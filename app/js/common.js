@@ -82,6 +82,14 @@ $(function() {
     return false;
   });
 
+  $('.reviews__carousel').owlCarousel({
+    loop: true,
+    items: 1,
+    smartSpeed: 700,
+    nav: false,
+    autoHeight: true
+  });
+
   // Resize window
   function onResize() {
     $('.services__content').equalHeights();

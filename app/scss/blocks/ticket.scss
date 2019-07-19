@@ -95,6 +95,10 @@
 .ticket__select {
   padding: 12px 23px;
   margin-bottom: 30px;
+
+  option {
+    color: $dark;
+  }
 }
 
 
