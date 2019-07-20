@@ -166,3 +166,7 @@ section {
     padding: 12px 36px;
   }
 }
+
+.owl-carousel .owl-item {
+  backface-visibility: inherit;
+}

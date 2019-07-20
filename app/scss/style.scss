@@ -12,6 +12,9 @@
 @import "blocks/ticket.scss";
 @import "blocks/reviews.scss";
 @import "blocks/partners.scss";
+@import "blocks/site-footer.scss";
+@import "blocks/top.scss";
+@import "blocks/preloader.scss";
 
 $colors: $blue, $red, $accent;
 @for $i from 1 through length($colors) {

@@ -64,6 +64,18 @@ $(function() {
     ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
   });
 
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > $(this).height()) {
+      $('.top').addClass('active');
+    } else {
+      $('.top').removeClass('active');
+    }
+  })
+
+  $('.top').click(function() {
+    $('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+  })
+
   //E-mail Ajax Send
   $("form.ticket__form").submit(function() { //Change
     var th = $(this);
@@ -124,3 +136,7 @@ $(function() {
     onResize();
   }
 });
+
+$(window).on('load', function() {
+  $('.preloader').delay(500).fadeOut('slow');
+})

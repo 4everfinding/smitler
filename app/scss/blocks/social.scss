@@ -5,9 +5,13 @@
   list-style: none;
 }
 
+.social__list--footer {
+  display: flex;
+}
+
 .social__item {
   padding: 0;
-  margin: 0;
+  margin-right: 15px;
 
   a {
     display: flex;
@@ -28,6 +32,19 @@
 
     &:hover, &:focus {
       background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+.social__item--footer {
+  margin-right: 12px;
+
+  a {
+    color: #ABABAB;
+    transition: color 0.5s ease, background-color 0.5s ease;
+
+    &:hover, &:focus {
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 }
