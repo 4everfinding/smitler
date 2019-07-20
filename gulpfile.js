@@ -20,8 +20,8 @@ var gulp           = require('gulp'),
 			server: {
 				baseDir: 'app'
 			},
-			notify: false,
-			browser: 'firefox'
+			notify: false
+			// browser: 'firefox'
 			// tunnel: true,
 			// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
 		});
@@ -38,13 +38,13 @@ gulp.task('common-js', function() {
 	.pipe(gulp.dest('app/js'));
 });
 
-gulp.task('js', ['common-js'], function() {
+gulp.task('scripts', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
     'app/libs/mmenu/js/jquery.mmenu.all.min.js',
     'app/libs/owl.carousel/owl.carousel.min.js',
-    'app/libs/equalheights/equalheights.js',
     'app/libs/fotorama/fotorama.js',
+    'app/libs/equalheights/equalheights.js',
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -56,7 +56,7 @@ gulp.task('js', ['common-js'], function() {
 gulp.task('scss', function() {
 	return gulp.src('app/scss/style.scss')
   .pipe(sourcemap.init())
-	.pipe(scss({outputStyle: 'expanded'}).on("error", notify.onError()))
+	.pipe(scss({outputStyle: 'compressed'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
 	// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
@@ -65,7 +65,7 @@ gulp.task('scss', function() {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('watch', ['scss', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['scss', 'scripts', 'browser-sync'], function() {
 	gulp.watch('app/scss/**/*.scss', ['scss']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
@@ -77,7 +77,7 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'scss', 'scripts'], function() {
 
 	var buildFiles = gulp.src([
 		'app/*.html',
@@ -85,8 +85,12 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
-		'app/css/main.min.css',
+		'app/css/style.min.css',
 		]).pipe(gulp.dest('dist/css'));
+
+  var buildLibs = gulp.src([
+    'app/libs/**/*',
+    ]).pipe(gulp.dest('dist/libs'));
 
 	var buildJs = gulp.src([
 		'app/js/scripts.min.js',
